@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2019
+  ~ Copyright Holder : CompactCode - CompactCode BvBa - Belgium
+  ~ Copyright : Unless granted permission from CompactCode BvBa.
+  ~ You can not distribute, reuse, edit, resell or sell this.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="ccintercom" translate="label" type="text" sortOrder="09142905" showInDefault="1" showInWebsite="1" showInStore="0">
+            <class>separator-top</class>
+            <label>Intercom</label>
+            <tab>compactcode_tab</tab>
+            <resource>CompactCode_Intercom::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+                <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment cc-logo"><img src="http://compactcode.eu/pub/media/compactcode/images/default/CompactCodeIcon64.png" alt="CompactCode" height="69" width="64"></span><span class="compactcomment comment"><p>This module add the Intercom Messaging Platform to your website.</p></span></div></div>]]></comment>
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>App Id</label>
+                    <depends>
+                        <field id="ccintercom/general/enable">1</field>
+                    </depends>
+                    <validate>required</validate>
+                    <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment infoicon"></span><span class="compactcomment comment"><p>Your unique code assigned to your intercom app</p><p><a href="https://www.intercom.com/help/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-workspace-id-app-id">Where can I find my workspace ID (app ID)?</a></p></span></div></div>]]></comment>
+                </field>
+                <field id="access_token" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Access Token</label>
+                    <depends>
+                        <field id="ccintercom/general/enable">1</field>
+                    </depends>
+                    <validate>required</validate>
+                    <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment infoicon"></span><span class="compactcomment comment"><p>This token is required to access data in your own Intercom workspace</p><p><a href="https://help-desk-migration.com/help/get-intercom-api-access-token/">Where can I find my access token?</a></p></span></div></div>]]></comment>
+                </field>
+                <field id="knowledgebase_link" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Knowledge Base Link</label>
+                    <frontend_model>CompactCode\Intercom\Model\Frontend\InputLabel</frontend_model>
+                    <depends>
+                        <field id="ccintercom/general/enable">1</field>
+                    </depends>
+                    <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment infoicon"></span><span class="compactcomment comment"><p>The link to your help center</p></span></div></div>]]></comment>
+                </field>
+            </group>
+            <group id="positioning" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+                <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment cc-logo"><img src="http://compactcode.eu/pub/media/compactcode/images/default/CompactCodeIcon64.png" alt="CompactCode" height="69" width="64"></span><span class="compactcomment comment"><p>Change the Intercom button position</p></span></div></div>]]></comment>
+                <label>Button Positioning</label>
+                <field id="position" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Position</label>
+                    <source_model>CompactCode\Intercom\Model\Config\Source\Position</source_model>
+                    <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment infoicon"></span><span class="compactcomment comment"><p>Positioning of the Intercom button</p></span></div></div>]]></comment>
+                </field>
+                <field id="padding_vertical" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Padding Vertical</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment infoicon"></span><span class="compactcomment comment"><p>Additional vertical padding <span style="font-weight: bold;">(pixels)</span></p></span></div></div>]]></comment>
+                </field>
+                <field id="padding_horizontal" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Padding Horizontal</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment><![CDATA[<div class="page-main-actions"><div class="compactcontainer"><span class="compactcomment infoicon"></span><span class="compactcomment comment"><p>Additional horizontal padding <span style="font-weight: bold;">(pixels)</span></p></span></div></div>]]></comment>
+                </field>
+                <depends>
+                    <field id="ccintercom/general/enable">1</field>
+                </depends>
+            </group>
+        </section>
+    </system>
+</config>

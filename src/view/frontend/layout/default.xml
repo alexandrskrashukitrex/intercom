@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2019
+  ~ Copyright Holder : CompactCode - CompactCode BvBa - Belgium
+  ~ Copyright : Unless granted permission from CompactCode BvBa.
+  ~ You can not distribute, reuse, edit, resell or sell this.
+  -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceContainer name="content">
+            <container name="cc-intercom-container" htmlTag="div" htmlClass="intercom-container">
+                <block class="CompactCode\Intercom\Block\Intercom" name="intercom" template="CompactCode_Intercom::intercom.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>
