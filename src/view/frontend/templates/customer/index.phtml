@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright (c) 2019
+ * Copyright Holder : CompactCode - CompactCode BvBa - Belgium
+ * Copyright : Unless granted permission from CompactCode BvBa.
+ * You can not distribute, reuse, edit, resell or sell this.
+ */
+
+/**
+ * @var $block \CompactCode\Intercom\Block\Customer\Index
+ */
+
+$conversationsArray = $block->getTickets();
+?>
+<?php if (isset($conversationsArray) && !empty($conversationsArray)) : ?>
+    <div class="table-wrapper support-table">
+        <table class="data table support" id="my-support-table">
+            <thead>
+            <tr>
+                <th scope="col" class="col ticket"><?= /* @noEscape */ __('Ticket Nr.') ?></th>
+                <th scope="col" class="col created-at"><?= /* @noEscape */ __('Created At') ?></th>
+                <th scope="col" class="col status"><?= /* @noEscape */ __('Status') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($conversationsArray as $conversation) : ?>
+                <tr data-mage-init='{"intercom-boot" : {}}'>
+                    <td data-th="<?= $block->escapeHtml(__('Ticket Nr'))?>" class="col ticket"><?= /* @noEscape */ $conversation['id']?></td>
+                    <td data-th="<?= $block->escapeHtml(__('Created At'))?>" class="col created-at"><?= /* @noEscape */ date('d/m/Y H:i', $conversation['created_at']) ?></td>
+                    <?php if ($conversation['state'] == "closed") : ?>
+                        <td data-th="<?= $block->escapeHtml(__('Status')) ?>" class="col status" style="color : #3cc34e;"><?= /* @noEscape */ $conversation['state'] ?></td>
+                    <?php elseif ($conversation['state'] == "open") : ?>
+                        <td data-th="<?= $block->escapeHtml(__('Status')) ?>" class="col status" style="color : #f5c200;"><?= /* @noEscape */ $conversation['state'] ?></td>
+                    <?php elseif ($conversation['state'] == "snoozed") : ?>
+                        <td data-th="<?= $block->escapeHtml(__('Status')) ?>" class="col status" style="color : #f52f00"><?= /* @noEscape */ $conversation['state'] ?></td>
+                    <?php endif; ?>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php else : ?>
+    <div class="message info empty"><span><?= /* @noEscape */ __('There are no tickets found.') ?></span></div>
+<?php endif; ?>

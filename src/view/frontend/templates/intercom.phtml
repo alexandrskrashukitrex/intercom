@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright (c) 2019
+ * Copyright Holder : CompactCode - CompactCode BvBa - Belgium
+ * Copyright : Unless granted permission from CompactCode BvBa.
+ * You can not distribute, reuse, edit, resell or sell this.
+ */
+
+/**
+ * @var $block \CompactCode\Intercom\Block\Intercom
+ */
+
+$customer = $block->getLoggedInCustomer();
+?>
+<?php if ($block->getModuleEnable()) : ?>
+    <script>
+        var APP_ID = "<?= /* @noEscape */ $block->getAppId(); ?>";
+        window.Intercom('boot', {
+            app_id: APP_ID,
+            <?php if (isset($customer) && !empty($customer)) :?>
+            name: "<?= /* @noEscape */ $block->escapeHtml($customer['name']) ?>",
+            email: "<?= /* @noEscape */ $block->escapeHtml($customer['email']) ?>",
+            <?php endif; ?>
+            alignment: '<?= /* @noEscape */ $block->getPosition(); ?>',
+            horizontal_padding: <?= /* @noEscape */ $block->getPaddingHorizontal(); ?>,
+            vertical_padding: <?= /* @noEscape */ $block->getPaddingVertical(); ?>,
+        });
+    </script>
+<?php endif; ?>
+

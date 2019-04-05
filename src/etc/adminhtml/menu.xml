@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ Copyright (c) 2019
+  ~ Copyright Holder : CompactCode - CompactCode BvBa - Belgium
+  ~ Copyright : Unless granted permission from CompactCode BvBa.
+  ~ You can not distribute, reuse, edit, resell or sell this.
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CompactCode_Intercom::title" title="Intercom" module="CompactCode_Intercom" sortOrder="09142905" resource="CompactCode_Intercom::title" parent="CompactCode_Base::base"/>
+        <add id="CompactCode_Intercom::configuration" title="Configuration" module="CompactCode_Intercom" sortOrder="10" action="adminhtml/system_config/edit/section/ccintercom" resource="CompactCode_Intercom::config" parent="CompactCode_Intercom::title"/>
+    </menu>
+</config>
