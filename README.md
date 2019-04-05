@@ -7,6 +7,10 @@
 
 All documentation and pictures can be found on https://compactcode.eu/intercom
 
+# Alert
+
+We try to keep the github project up-to-date but to ensure you have the latest version you can install the module trough our website.
+
 
 # Magento 2 Intercom integration
 
@@ -32,7 +36,7 @@ You need to perform the following commands after that *(within your magento root
   * `php bin/magento setup:static-content:deploy`
 
 ## Composer Install Instructions
-  * `composer config repositories.compactcode.intercom git git@github.com:CompactCodeEU/intercom.git`
+  * `composer config repositories.compactcode-base git git@github.com:CompactCodeEU/base.git && composer config repositories.compactcode-intercom git git@github.com:CompactCodeEU/intercom.git`
 
   * `composer require "compactcode/intercom:dev-master"`
 
