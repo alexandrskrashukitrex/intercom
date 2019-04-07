@@ -1,5 +1,6 @@
 ![CompactCode](https://compactcode.eu/pub/media/logo/stores/1/CompactCode_Logo.png)
 
+# Magento 2 Intercom integration
 
 # Documentation
 
@@ -12,7 +13,7 @@ All documentation and pictures can be found on https://compactcode.eu/intercom
 We try to keep the github project up-to-date but to ensure you have the latest version you can install the module trough our website.
 
 
-# Magento 2 Intercom integration
+# Information
 
 ![CompactCode Intercom](https://compactcode.eu/pub/media/catalog/product/cache/3fe9a87e27d9fa1710491a7d32c4e511/i/n/intercom-01.jpg)
 
