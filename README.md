@@ -26,6 +26,8 @@ A chat function on your website is a must have these days. This free module will
 
 Create a folder named **CompactCode/Intercom** under your app/code folder within your Magento Root directory and place all provided files within the src directory under that.
 
+You will need to do the same with our Base module : https://github.com/CompactCodeEU/base
+
 You need to perform the following commands after that *(within your magento root directory via ssh)*:
 
   * `php bin/magento cache:clean`
