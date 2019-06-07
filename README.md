@@ -22,7 +22,7 @@ This free module for Magento 2© provides a intercom chat function integration. 
  
 A chat function on your website is a must have these days. This free module will provide just that with the help of Intercom.
 
-## Installation
+## Manual Installation
 
 Create a folder named **CompactCode/Intercom** under your app/code folder within your Magento Root directory and place all provided files within the src directory under that.
 
